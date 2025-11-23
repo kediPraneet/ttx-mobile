@@ -74,7 +74,7 @@ const Index = () => {
                 size="lg"
                 variant="outline"
                 className="border-primary/50 hover:bg-primary/10"
-                onClick={() => document.getElementById('admin-journey')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.open("https://mob-updated-frontend-pb1crt6mg-kp0702s-projects.vercel.app/admin-direct", "_blank")}
               >
                 View Admin Journey
               </Button>
