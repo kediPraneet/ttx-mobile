@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark cyber theme - base colors */
+    --background: 220 8% 8%;
+    --foreground: 45 5% 90%;
+
+    --card: 220 10% 12%;
+    --card-foreground: 45 5% 90%;
+
+    --popover: 220 10% 12%;
+    --popover-foreground: 45 5% 90%;
+
+    /* Orange/Yellow accent - primary brand color */
+    --primary: 38 92% 50%;
+    --primary-foreground: 220 8% 8%;
+
+    /* Secondary accent - yellow */
+    --secondary: 45 93% 58%;
+    --secondary-foreground: 220 8% 8%;
+
+    --muted: 220 10% 18%;
+    --muted-foreground: 45 5% 60%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 220 8% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 45 5% 90%;
+
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 38 92% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom TTX theme variables */
+    --glow-orange: 38 92% 50%;
+    --glow-yellow: 45 93% 58%;
+    --glass-bg: 220 10% 12%;
+    --grid-color: 220 10% 15%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism effect */
+  .glass {
+    @apply bg-card/40 backdrop-blur-xl border border-border/50;
+  }
+
+  .glass-strong {
+    @apply bg-card/60 backdrop-blur-2xl border border-border/70;
+  }
+
+  /* Glow effects */
+  .glow-orange {
+    box-shadow: 0 0 20px hsl(var(--glow-orange) / 0.3),
+                0 0 40px hsl(var(--glow-orange) / 0.2);
+  }
+
+  .glow-yellow {
+    box-shadow: 0 0 20px hsl(var(--glow-yellow) / 0.3),
+                0 0 40px hsl(var(--glow-yellow) / 0.2);
+  }
+
+  /* Animated gradient background */
+  .bg-grid {
+    background-image: 
+      linear-gradient(hsl(var(--grid-color)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--grid-color)) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+}
