@@ -9,7 +9,7 @@ function FloatingCard({ position, text, color }: { position: [number, number, nu
 
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.1;
+      meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 6) * 0.1;
     }
     if (textRef.current) {
       textRef.current.lookAt(0, 0, 10);
@@ -17,7 +17,7 @@ function FloatingCard({ position, text, color }: { position: [number, number, nu
   });
 
   return (
-    <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
+    <Float speed={40} rotationIntensity={0.5} floatIntensity={0.5}>
       <group position={position}>
         <mesh ref={meshRef}>
           <boxGeometry args={[2, 1.2, 0.1]} />
@@ -71,7 +71,7 @@ export const Hero3DScene = () => {
           enableZoom={false} 
           enablePan={false}
           autoRotate
-          autoRotateSpeed={0.5}
+          autoRotateSpeed={15}
         />
       </Canvas>
     </div>

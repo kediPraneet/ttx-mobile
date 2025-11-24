@@ -104,7 +104,7 @@ const Index = () => {
                 <div className="text-sm text-muted-foreground">Platform View</div>
               </div>
               <div className="text-center border-x border-border">
-                <div className="text-3xl font-bold text-gradient">3 Roles</div>
+                <div className="text-3xl font-bold text-gradient">9</div>
                 <div className="text-sm text-muted-foreground">User Paths</div>
               </div>
               <div className="text-center">
